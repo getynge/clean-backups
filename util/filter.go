@@ -2,18 +2,11 @@ package util
 
 import (
 	"path"
-	"regexp"
 	"time"
 )
 
-var fileRegexp = regexp.MustCompile(`^[0-9]{12}\.tar\.gz$`)
-
 func ShouldDeleteFile(fqp string, now time.Time) bool {
 	file := path.Base(fqp)
-
-	if !fileRegexp.MatchString(file) {
-		return false
-	}
 
 	moment, err := time.Parse("200601021504.tar.gz", file)
 
