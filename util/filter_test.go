@@ -15,6 +15,7 @@ func TestShouldDeleteFile(t *testing.T) {
 		"202101200000.tar.gz":                    false,
 		"202101012300.tar.gz":                    false,
 		"202101210000.tar.gz":                    false,
+		"garbage.tar.gz":                         false,
 	}
 
 	for file, desiredResult := range files {
