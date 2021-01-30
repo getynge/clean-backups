@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"github.com/getynge/clean-backups/util"
-	"io/fs"
 	"os"
 	"path/filepath"
 	"time"
@@ -18,7 +17,7 @@ func main() {
 	now := time.Now()
 	root := os.Args[1]
 
-	err := filepath.Walk(root, func(path string, info fs.FileInfo, err error) error {
+	err := filepath.Walk(root, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
 			return err
 		}
